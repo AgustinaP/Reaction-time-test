@@ -39,10 +39,8 @@ span {
 }
 
 .par{
-    width: 550px;
     text-align: justify;
     margin-top: 40px;
-    margin-left: 100px;
     margin-bottom: 40px;
 }
 
@@ -63,7 +61,7 @@ li {
 }
 
 #p1{
-
+    margin-left: 5%;
 
 }
 
@@ -72,7 +70,9 @@ li {
 }
 
 #b1{
-    margin-left: 45%;
+    width: 80%;
+    margin-left: 10%;
+    maring-top: 5%;
     margin-bottom: 40px;
 }
 
@@ -96,7 +96,13 @@ li {
     height: 80px;
     background-color: transparent;
     margin: 10px;
-    margin-left: 20%;
+    margin-left: 15%;
+
+}
+
+#b3{
+    margin-left: 30%;
+    margin-top: 30%;
 }
 
 #div1{
@@ -110,8 +116,6 @@ li {
 
 #lista{
     margin-left: 50px;
-    margin-top: -20px;
-
 }
 
 #extras{
