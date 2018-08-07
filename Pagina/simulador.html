@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="icon" href="src/icon.png">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Agustina Pizarro</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <p id="instrucciones">Instrucciones:
+        <ol id="lista">
+            <li>Presione el boton para iniciar el contador.</li>
+            <li>Cuando se encianda la luz presione el boton nuevamente</li>
+            <li>Luego aparecera el tiempo que tardo en reaccionar</li>
+            <li>Si presiona el boton nuevamente puede intentar nuevamente el test</li>
+        </ol>
+    </p>
+    <div class="jumbotron" id="div1">
+        <button type="button" class="btn btn-dark btn-lg" id="b2" onclick="start()">Empezar</button>
+        <img src="src/bombilla-de-luz-off.png" id="luz"></img>
+        <h1 id="timer">0 s</h1>
+    </div>
+    <footer style="text-align: center">Iconos diseñados por <a href="https://www.flaticon.es/autores/dave-gandy" title="Dave Gandy">Dave Gandy</a> desde <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.com</a> con licencia <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></footer>
+<script>
+    let state = 0;
+    let time = 0.0;
+    let rTime= 0.0;
+    let id;
+    function start() {
+        let button = document.getElementById("b2");
+        let light = document.getElementById("luz");
+        let timer = document.getElementById("timer");
+
+        switch (state) {
+            case 0:
+                rTime = Math.random() * 10;
+                setTimeout(() => {
+                    time = 0;
+                    light.src = "src/bombilla-de-luz-on.png";
+                    console.log("hola");
+                    id = window.setInterval(() => {
+                        time = time + 0.01;
+                        console.log(time);
+                    }, 10);
+                    state = 1;
+                }, rTime * 1000);
+                button.innerText = "Pausar";
+
+                break;
+            case 1:
+                timer.innerText = time.toPrecision(3) + " s";
+                time = 0;
+                state = 2;
+                clearInterval(id);
+                button.innerText = "Reiniciar";
+                break;
+            case 2:
+                button.innerText = "Empezar";
+                time = 0;
+                timer.innerText = "0 s";
+                light.src = "src/bombilla-de-luz-off.png";
+                state = 0;
+                break;
+        }
+    }
+
+</script>
+
+</body>
+</html>

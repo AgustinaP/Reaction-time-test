@@ -71,6 +71,49 @@ li {
 
 }
 
+#b1{
+    margin-left: 45%;
+    margin-bottom: 40px;
+}
+
+#b2{
+    width: 50%;
+    margin-left: 10%;
+}
+
+#timer{
+    width: 80%;
+    height: 20%;
+    margin-top: 10%;
+    margin-left: 10%;
+    border: solid;
+    border-spacing: 10px;
+    border-color: black;
+}
+
+#luz{
+    width: 80px;
+    height: 80px;
+    background-color: transparent;
+    margin: 10px;
+    margin-left: 20%;
+}
+
+#div1{
+    margin: 50px;
+}
+
+#instrucciones{
+    margin: 40px;
+
+}
+
+#lista{
+    margin-left: 50px;
+    margin-top: -20px;
+
+}
+
 #extras{
     ext-align: justify;
     font-style: italic;
